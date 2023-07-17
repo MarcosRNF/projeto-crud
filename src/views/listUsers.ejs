@@ -1,0 +1,16 @@
+<%- include('./partials/head') %> <%- include('./partials/navbar') %>
+
+<div class="elements">
+  <ul>
+    <% users.forEach((user) => { %>
+    <li>
+      Nome: <%= user.name %> - Email: <%= user.email %> - Idade: <%= user.age %>
+      anos
+      <a href="/edit/?id=<%= user._id %>">[editar]</a>
+      <a href="/remove/<%= user._id %>">[Deletar]</a>
+    </li>
+
+    <% }) %>
+  </ul>
+</div>
+<%- include('./partials/footer') %>

@@ -1,0 +1,23 @@
+<%- include('./partials/head') %> <%- include('./partials/navbar') %>
+<h1><%= title %></h1>
+
+<% if(typeof message !== 'undefined'){ %> <%= message %> <% }%>
+<form action="/edit/<%= user._id %>" method="POST">
+  <div>
+    <label for="name">Nome</label>
+    <input type="text" name="name" value="<%= user.name %>" />
+  </div>
+  <div>
+    <label for="age">Idade</label>
+    <input type="number" name="age" value="<%= user.age %>" />
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input type="email" name="email" value="<%= user.email %>" />
+  </div>
+
+  <div>
+    <input type="submit" value="Editar" />
+  </div>
+</form>
+<%- include('./partials/footer') %>

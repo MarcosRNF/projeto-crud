@@ -1,0 +1,26 @@
+<%- include('./partials/head') %> <%- include('./partials/navbar') %>
+<h1><%= title %></h1>
+
+<% if(typeof message !== 'undefined'){ %> <%= message %> <% }%>
+<form action="/register/add" method="POST">
+  <div>
+    <label for="name">Nome</label>
+    <input type="text" name="name" />
+  </div>
+  <div>
+    <label for="age">Idade</label>
+    <input type="number" name="age" />
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input type="email" name="email" />
+  </div>
+  <div>
+    <label for="password">Senha</label>
+    <input type="password" name="password" />
+  </div>
+  <div>
+    <input type="submit" value="Cadastrar" />
+  </div>
+</form>
+<%- include('./partials/footer') %>
